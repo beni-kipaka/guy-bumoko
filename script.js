@@ -1,6 +1,6 @@
 /* ===== À MODIFIER : réglages du cabinet ===== */
 const CONFIG = {
-  whatsapp: "243800000000",           // numéro WhatsApp, sans + ni espaces
+  whatsapp: "243810102555",           // numéro WhatsApp, sans + ni espaces
   email: "contact@drbumoko.cd",       // adresse qui reçoit les messages et réservations
   envoiAuto: false,                    // true = envoi direct par e-mail via formsubmit.co (activer l'adresse une fois)
   joursAffiches: 14,                   // nombre de jours proposés
