@@ -148,8 +148,9 @@ $("#again").onclick = () => {
 
 // Menu mobile
 const burger = $(".burger"), nav = $("#nav");
-burger.onclick = () => burger.setAttribute("aria-expanded", nav.classList.toggle("open"));
-nav.addEventListener("click", e => { if (e.target.tagName === "A") { nav.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); } });
+const menu = ouvert => { nav.classList.toggle("open", ouvert); burger.setAttribute("aria-expanded", ouvert); burger.textContent = ouvert ? "✕ Fermer" : "☰ Menu"; };
+burger.onclick = () => menu(!nav.classList.contains("open"));
+nav.addEventListener("click", e => { if (e.target.tagName === "A") menu(false); });
 
 $("#year").textContent = new Date().getFullYear();
 afficherJours();
@@ -170,7 +171,7 @@ $("#contactForm").addEventListener("submit", e => {
 
 // Thème clair / sombre
 const themeBtn = $("#theme");
-function majTheme() { themeBtn.textContent = document.documentElement.dataset.theme === "dark" ? "☀ Clair" : "☾ Sombre"; }
+function majTheme() { const sombre = document.documentElement.dataset.theme === "dark"; themeBtn.innerHTML = `<span>${sombre ? "☀" : "☾"}</span><span class="lbl"> ${sombre ? "Clair" : "Sombre"}</span>`; }
 themeBtn.onclick = () => {
   const t = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
   document.documentElement.dataset.theme = t;

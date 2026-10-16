@@ -211,3 +211,42 @@ blockquote cite{display:block;margin-top:1rem;font:600 .95rem var(--sans);color:
 }
 @media(max-width:560px){.grid.four{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.hero-text>*{animation:none!important}}
+
+/* ===== Responsive : menu, débordements, mobile ===== */
+body{overflow-x:clip}
+.hero>*,.grid>*,.split>*,.par>*,form>*{min-width:0}
+input,select,textarea{width:100%;min-width:0}
+.burger{white-space:nowrap}
+.nav-cta{display:none}
+@media(max-width:1100px){
+  .burger{display:block;order:3}
+  .tools{order:2;margin-left:auto}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:.4rem 1.25rem 1.2rem;background:var(--bg);border-bottom:1px solid var(--line);max-height:calc(100vh - 130px);overflow-y:auto;box-shadow:0 20px 30px rgba(0,0,0,.18)}
+  nav.open{display:flex}
+  nav a:not(.btn){padding:.9rem .2rem;border-bottom:1px solid var(--line);font-size:1.02rem}
+  .nav-cta{display:block;text-align:center;margin-top:1rem}
+  .c1{left:0}.c2{right:0}
+}
+@media(max-width:640px){
+  .top{gap:.5rem}
+  .brand small{display:none}
+  .brand b{font-size:1rem}
+  .logo{width:38px;height:38px}
+  .rdv,.theme .lbl{display:none}
+  .theme,.burger{padding:.5rem .75rem}
+  .ann{font-size:.82rem;padding:.5rem .8rem}
+  h2{font-size:1.65rem}
+  .cta .btn,.acts .btn,.done .btn,.ctabar .btn{flex:1 1 100%;width:100%;text-align:center}
+  form{padding:1.2rem}
+  .done{padding:1.4rem}
+  .band4{padding:1.2rem}
+  .tl{padding-left:1.3rem}
+  .tl article{padding:1.1rem}
+  .tl article::before{left:calc(-1.3rem - 9px)}
+  .ctabar{padding:1.2rem}
+  .chip{font-size:.78rem;padding:.45rem .7rem}
+  .prof{padding:1.4rem}
+  .visual .next{width:100%}
+  footer{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:360px){body{font-size:16px}.brand b{font-size:.92rem}.band b,.band4 b{font-size:1.9rem}}
